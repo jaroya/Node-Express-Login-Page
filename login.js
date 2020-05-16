@@ -12,10 +12,29 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/',(req,res)=>{
-	res.send('Login page')
+app.get('/',(req,res,next)=>{
+	res.render('index',{
+		user:res.cookies.user
+	});
 });
 
+app.get('/login',(req,res,next)=>{
+	res.render('login');
+});
+
+app.post('/process_login', (req,res,next)=>{
+
+	const email = req.body.email;
+	const pwd = req.body.password;
+
+	if(pwd === "realmenARE1234"){
+		res.cookie('user',email);
+		res.redirect('/?msg=success');
+	}else{
+		res.redirect('/login?msg=fail')
+	}
+	//res.json(req.body);
+});
 
 
 
