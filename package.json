@@ -1,0 +1,16 @@
+{
+  "name": "301",
+  "version": "1.0.0",
+  "description": "Login Site",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Jaroya",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0"
+  }
+}
