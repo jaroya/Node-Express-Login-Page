@@ -4,7 +4,21 @@
 <div class="container mt-3">
 	<div class="row d-flex justify-content-center">
 		<div class="col-6 jumbotron ">
+
+			<% if(msg != `` ){%>
+				<div class="alert alert-success mt-2" role="alert">
+				  <%= msg %>
+				</div>
+			<%}%>
+
 			<h3 class="text-danger text-center text-uppercase">Welcome to Home</h3>
+			
+				<% if(username != ""){%>
+					<p class="text-info text-center">
+						User: <%-username%>
+					</p>
+				<%}%>
+			
 		<p class="alert alert-success">	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -13,7 +27,15 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 
-		<a href="/login"><button class="btn btn-outline-danger mt-2">Login</button></a>
+		<% if(username == ""){%>
+
+			<a href="/login"><button class="btn btn-outline-danger mt-2">Login</button></a>
+
+		<% }else{%>
+
+			<a href="/logout"><button class="btn btn-outline-danger mt-2">Logout</button></a>
+
+		<% }%>
 		</div>
 	</div>
 </div>

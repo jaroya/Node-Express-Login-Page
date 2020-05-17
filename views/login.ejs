@@ -6,6 +6,12 @@
 		<div class="col-6 jumbotron ">
 			<h3 class="text-danger text-center text-uppercase ">My Mother Said</h3>
 
+			<% if(msg !== `` ){%>
+				<div class="alert alert-warning mt-2" role="alert">
+				  <%= msg %>
+				</div>
+			<%}%>
+
 			<form class="mt-2" action="/process_login" method="post">
 
 			  <div class="form-group">
